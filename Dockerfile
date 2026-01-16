@@ -1,6 +1,6 @@
-FROM php:8.2-fpm
+FROM php:8.2-cli
 
-# Install system dependencies
+# Install dependencies
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip \
-    nginx \
-    supervisor \
-    gettext-base \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -29,17 +26,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Copy supervisor config
-COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Make start script executable
-RUN chmod +x /var/www/html/start.sh
+RUN chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port
 EXPOSE 8080
 
-# Start with our script
-CMD ["/bin/bash", "/var/www/html/start.sh"]
+# Simple start command
+CMD php artisan migrate --force; php artisan serve --host=0.0.0.0 --port=$PORT
