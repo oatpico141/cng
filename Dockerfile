@@ -27,16 +27,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Set permissions
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
-
-# Create start script (skip seeder - data already exists)
-RUN echo '#!/bin/bash\n\
-echo "Starting application..."\n\
-php artisan migrate --force || true\n\
-php artisan config:clear\n\
-php artisan route:clear\n\
-echo "Starting server on port ${PORT:-8080}..."\n\
-exec php artisan serve --host=0.0.0.0 --port=${PORT:-8080}\n\
-' > /var/www/html/start.sh && chmod +x /var/www/html/start.sh
+RUN chmod +x /var/www/html/start.sh
 
 # Expose port
 EXPOSE 8080
