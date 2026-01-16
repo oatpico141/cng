@@ -1,0 +1,201 @@
+/**
+ * GCMS Project-Wide Color System (CI - Corporate Identity)
+ * Based on Appointment Page Primary Colors
+ * PROJECT FINALIZATION - PM Boss Approved
+ */
+
+:root {
+    /* ========================================
+       PRIMARY COLORS (จาก Appointment Page)
+       ======================================== */
+
+    /* Primary Blue Palette - โทนสีฟ้าหลัก */
+    --primary-50: #eff6ff;    /* Lightest blue */
+    --primary-100: #dbeafe;   /* Very light blue */
+    --primary-200: #bfdbfe;   /* Light blue */
+    --primary-300: #93c5fd;   /* Medium light blue */
+    --primary-400: #60a5fa;   /* Medium blue */
+    --primary-500: #3b82f6;   /* Primary blue (main) */
+    --primary-600: #2563eb;   /* Dark blue */
+    --primary-700: #1d4ed8;   /* Darker blue */
+    --primary-800: #1e40af;   /* Very dark blue */
+    --primary-900: #1e3a8a;   /* Darkest blue */
+
+    /* Secondary Light Colors - โทนสีรอง */
+    --secondary-white: #ffffff;
+    --secondary-light: #f8fafc;
+    --secondary-gray-50: #f9fafb;
+    --secondary-gray-100: #f3f4f6;
+    --secondary-gray-200: #e5e7eb;
+    --secondary-gray-300: #d1d5db;
+    --secondary-gray-400: #9ca3af;
+    --secondary-gray-500: #6b7280;
+    --secondary-gray-600: #4b5563;
+    --secondary-gray-700: #374151;
+    --secondary-gray-800: #1f2937;
+    --secondary-gray-900: #111827;
+
+    /* ========================================
+       SEMANTIC COLORS (สีตามความหมาย)
+       ======================================== */
+
+    /* Success - Green */
+    --success-50: #f0fdf4;
+    --success-500: #22c55e;
+    --success-600: #16a34a;
+
+    /* Warning - Yellow */
+    --warning-50: #fffbeb;
+    --warning-500: #f59e0b;
+    --warning-600: #d97706;
+
+    /* Danger - Red */
+    --danger-50: #fef2f2;
+    --danger-500: #ef4444;
+    --danger-600: #dc2626;
+
+    /* Info - Blue (uses primary) */
+    --info-50: var(--primary-50);
+    --info-500: var(--primary-500);
+    --info-600: var(--primary-600);
+
+    /* ========================================
+       COMPONENT DEFAULTS (ค่าเริ่มต้นของ Components)
+       ======================================== */
+
+    /* Headers */
+    --header-bg: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    --header-text: var(--secondary-white);
+
+    /* Cards */
+    --card-bg: var(--secondary-white);
+    --card-border: var(--secondary-gray-200);
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    /* Buttons */
+    --btn-primary-bg: var(--primary-600);
+    --btn-primary-hover: var(--primary-700);
+    --btn-primary-text: var(--secondary-white);
+
+    --btn-secondary-bg: var(--secondary-white);
+    --btn-secondary-hover: var(--secondary-gray-50);
+    --btn-secondary-text: var(--secondary-gray-700);
+    --btn-secondary-border: var(--secondary-gray-300);
+
+    /* Forms */
+    --input-bg: var(--secondary-white);
+    --input-border: var(--secondary-gray-300);
+    --input-focus-border: var(--primary-500);
+    --input-focus-ring: var(--primary-100);
+
+    /* Tables */
+    --table-header-bg: var(--secondary-gray-50);
+    --table-row-hover: var(--primary-50);
+    --table-border: var(--secondary-gray-200);
+
+    /* Sidebar */
+    --sidebar-bg: var(--secondary-white);
+    --sidebar-border: var(--secondary-gray-200);
+    --sidebar-item-hover: var(--primary-50);
+    --sidebar-item-active: var(--primary-100);
+    --sidebar-text: var(--secondary-gray-700);
+    --sidebar-text-active: var(--primary-600);
+
+    /* Badges */
+    --badge-primary-bg: var(--primary-100);
+    --badge-primary-text: var(--primary-700);
+
+    /* Special Components */
+    --critical-allergy-bg: var(--danger-50);
+    --critical-allergy-border: var(--danger-500);
+    --critical-allergy-text: var(--danger-600);
+}
+
+/* ========================================
+   UTILITY CLASSES (คลาสที่ใช้บ่อย)
+   ======================================== */
+
+/* Background Colors */
+.bg-primary { background-color: var(--primary-500) !important; }
+.bg-primary-light { background-color: var(--primary-100) !important; }
+.bg-primary-dark { background-color: var(--primary-700) !important; }
+.bg-secondary { background-color: var(--secondary-gray-100) !important; }
+
+/* Text Colors */
+.text-primary { color: var(--primary-600) !important; }
+.text-primary-light { color: var(--primary-400) !important; }
+.text-primary-dark { color: var(--primary-800) !important; }
+.text-secondary { color: var(--secondary-gray-600) !important; }
+
+/* Button Overrides */
+.btn-primary {
+    background-color: var(--btn-primary-bg) !important;
+    border-color: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-text) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover) !important;
+    border-color: var(--btn-primary-hover) !important;
+}
+
+/* Card Styling */
+.card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+.card:hover {
+    box-shadow: var(--card-hover-shadow) !important;
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    background-color: var(--input-bg) !important;
+    border-color: var(--input-border) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--input-focus-border) !important;
+    box-shadow: 0 0 0 0.2rem var(--input-focus-ring) !important;
+}
+
+/* Table Styling */
+.table thead th {
+    background-color: var(--table-header-bg) !important;
+    border-color: var(--table-border) !important;
+}
+
+.table tbody tr:hover {
+    background-color: var(--table-row-hover) !important;
+}
+
+/* Badge Styling */
+.badge-primary {
+    background-color: var(--badge-primary-bg) !important;
+    color: var(--badge-primary-text) !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --card-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* ========================================
+   DARK MODE (Future Enhancement)
+   ======================================== */
+
+/*
+@media (prefers-color-scheme: dark) {
+    :root {
+        // Dark mode color overrides
+    }
+}
+*/

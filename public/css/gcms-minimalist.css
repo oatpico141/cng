@@ -1,0 +1,503 @@
+/**
+ * GCMS Minimalist Design System
+ * FINAL PROJECT REDESIGN - True Minimalist UI
+ * PM Boss Approved - Total Overhaul
+ */
+
+:root {
+    /* ========================================
+       MINIMALIST COLOR PALETTE
+       Ultra-light, Clean, Professional
+       ======================================== */
+
+    /* Pure Whites & Ultra-light Grays */
+    --min-white: #ffffff;
+    --min-gray-50: #fafafa;   /* Almost white */
+    --min-gray-100: #f5f5f5;  /* Very light gray */
+    --min-gray-150: #f0f0f0;  /* Light divider */
+    --min-gray-200: #ebebeb;  /* Subtle border */
+    --min-gray-300: #e0e0e0;  /* Light border */
+    --min-gray-400: #bdbdbd;  /* Disabled state */
+    --min-gray-500: #9e9e9e;  /* Placeholder text */
+    --min-gray-600: #757575;  /* Secondary text */
+    --min-gray-700: #616161;  /* Primary text */
+    --min-gray-800: #424242;  /* Dark text */
+    --min-gray-900: #212121;  /* Darkest text */
+
+    /* Minimalist Blue Accent (Very Soft) */
+    --min-blue-50: #f0f7ff;   /* Lightest blue tint */
+    --min-blue-100: #e6f2ff;  /* Very light blue */
+    --min-blue-200: #bae0ff;  /* Light blue */
+    --min-blue-300: #7cc4fa;  /* Soft blue */
+    --min-blue-400: #47a3f3;  /* Medium blue */
+    --min-blue-500: #2186eb;  /* Primary blue */
+    --min-blue-600: #166ee6;  /* Hover blue */
+    --min-blue-700: #0d5ec9;  /* Active blue */
+
+    /* Status Colors (Muted) */
+    --min-success: #10b981;   /* Soft green */
+    --min-warning: #f59e0b;   /* Soft amber */
+    --min-danger: #ef4444;    /* Soft red */
+
+    /* ========================================
+       MINIMALIST SPACING SYSTEM
+       ======================================== */
+    --min-space-xs: 0.25rem;  /* 4px */
+    --min-space-sm: 0.5rem;   /* 8px */
+    --min-space-md: 1rem;     /* 16px */
+    --min-space-lg: 1.5rem;   /* 24px */
+    --min-space-xl: 2rem;     /* 32px */
+    --min-space-2xl: 3rem;    /* 48px */
+    --min-space-3xl: 4rem;    /* 64px */
+
+    /* ========================================
+       MINIMALIST TYPOGRAPHY
+       ======================================== */
+    --min-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --min-font-size-xs: 0.75rem;   /* 12px */
+    --min-font-size-sm: 0.875rem;  /* 14px */
+    --min-font-size-base: 1rem;    /* 16px */
+    --min-font-size-lg: 1.125rem;  /* 18px */
+    --min-font-size-xl: 1.25rem;   /* 20px */
+    --min-font-size-2xl: 1.5rem;   /* 24px */
+    --min-font-size-3xl: 2rem;     /* 32px */
+
+    --min-font-weight-light: 300;
+    --min-font-weight-normal: 400;
+    --min-font-weight-medium: 500;
+    --min-font-weight-semibold: 600;
+
+    --min-line-height: 1.5;
+    --min-line-height-tight: 1.25;
+    --min-line-height-loose: 1.75;
+
+    /* ========================================
+       MINIMALIST EFFECTS
+       ======================================== */
+    --min-shadow-none: none;
+    --min-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    --min-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+    --min-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    --min-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+
+    --min-border-none: none;
+    --min-border-thin: 1px solid var(--min-gray-200);
+    --min-border-light: 1px solid var(--min-gray-150);
+
+    --min-radius-sm: 0.25rem;  /* 4px */
+    --min-radius-md: 0.5rem;   /* 8px */
+    --min-radius-lg: 0.75rem;  /* 12px */
+    --min-radius-xl: 1rem;     /* 16px */
+    --min-radius-full: 9999px;
+
+    /* ========================================
+       COMPONENT DEFAULTS
+       ======================================== */
+
+    /* Page Background */
+    --min-bg-primary: var(--min-white);
+    --min-bg-secondary: var(--min-gray-50);
+
+    /* Cards */
+    --min-card-bg: var(--min-white);
+    --min-card-border: var(--min-border-none);
+    --min-card-shadow: var(--min-shadow-xs);
+    --min-card-padding: var(--min-space-lg);
+
+    /* Headers */
+    --min-header-bg: var(--min-white);
+    --min-header-border: var(--min-border-light);
+    --min-header-height: 64px;
+
+    /* Sidebar */
+    --min-sidebar-bg: var(--min-white);
+    --min-sidebar-border: var(--min-border-light);
+    --min-sidebar-width: 240px;
+
+    /* Buttons */
+    --min-btn-height: 40px;
+    --min-btn-padding-x: var(--min-space-lg);
+    --min-btn-font-weight: var(--min-font-weight-medium);
+
+    /* Forms */
+    --min-input-height: 40px;
+    --min-input-bg: var(--min-white);
+    --min-input-border: var(--min-border-thin);
+    --min-input-focus-border: var(--min-blue-500);
+    --min-input-placeholder: var(--min-gray-500);
+
+    /* Tables */
+    --min-table-bg: var(--min-white);
+    --min-table-border: var(--min-border-light);
+    --min-table-row-hover: var(--min-gray-50);
+}
+
+/* ========================================
+   MINIMALIST GLOBAL STYLES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--min-font-family);
+    font-size: var(--min-font-size-base);
+    font-weight: var(--min-font-weight-normal);
+    line-height: var(--min-line-height);
+    color: var(--min-gray-700);
+    background: var(--min-bg-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   MINIMALIST TYPOGRAPHY
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--min-gray-900);
+    font-weight: var(--min-font-weight-medium);
+    line-height: var(--min-line-height-tight);
+}
+
+h1 {
+    font-size: var(--min-font-size-3xl);
+    font-weight: var(--min-font-weight-light);
+    margin-bottom: var(--min-space-xl);
+}
+
+h2 {
+    font-size: var(--min-font-size-2xl);
+    margin-bottom: var(--min-space-lg);
+}
+
+h3 {
+    font-size: var(--min-font-size-xl);
+    margin-bottom: var(--min-space-md);
+}
+
+h4 {
+    font-size: var(--min-font-size-lg);
+    margin-bottom: var(--min-space-md);
+}
+
+p {
+    color: var(--min-gray-600);
+    margin-bottom: var(--min-space-md);
+}
+
+a {
+    color: var(--min-blue-500);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--min-blue-600);
+}
+
+/* ========================================
+   MINIMALIST CARDS
+   ======================================== */
+
+.min-card {
+    background: var(--min-card-bg);
+    border: var(--min-card-border);
+    border-radius: var(--min-radius-lg);
+    box-shadow: var(--min-card-shadow);
+    padding: var(--min-card-padding);
+    margin-bottom: var(--min-space-lg);
+}
+
+.min-card-header {
+    padding-bottom: var(--min-space-md);
+    margin-bottom: var(--min-space-lg);
+    border-bottom: var(--min-border-light);
+}
+
+.min-card-title {
+    font-size: var(--min-font-size-lg);
+    font-weight: var(--min-font-weight-medium);
+    color: var(--min-gray-900);
+}
+
+/* ========================================
+   MINIMALIST BUTTONS
+   ======================================== */
+
+.min-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--min-btn-height);
+    padding: 0 var(--min-btn-padding-x);
+    font-size: var(--min-font-size-sm);
+    font-weight: var(--min-btn-font-weight);
+    border-radius: var(--min-radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.min-btn-primary {
+    background: var(--min-blue-500);
+    color: var(--min-white);
+}
+
+.min-btn-primary:hover {
+    background: var(--min-blue-600);
+    transform: translateY(-1px);
+}
+
+.min-btn-secondary {
+    background: var(--min-white);
+    color: var(--min-gray-700);
+    border: var(--min-border-thin);
+}
+
+.min-btn-secondary:hover {
+    background: var(--min-gray-50);
+}
+
+.min-btn-ghost {
+    background: transparent;
+    color: var(--min-gray-600);
+}
+
+.min-btn-ghost:hover {
+    background: var(--min-gray-50);
+}
+
+/* Icon-only buttons */
+.min-btn-icon {
+    width: var(--min-btn-height);
+    padding: 0;
+}
+
+/* ========================================
+   MINIMALIST FORMS
+   ======================================== */
+
+.min-input,
+.min-select {
+    width: 100%;
+    height: var(--min-input-height);
+    padding: 0 var(--min-space-md);
+    font-size: var(--min-font-size-base);
+    background: var(--min-input-bg);
+    border: var(--min-input-border);
+    border-radius: var(--min-radius-md);
+    transition: all 0.2s ease;
+}
+
+.min-input:focus,
+.min-select:focus {
+    outline: none;
+    border-color: var(--min-input-focus-border);
+    box-shadow: 0 0 0 3px rgba(33, 134, 235, 0.1);
+}
+
+.min-input::placeholder {
+    color: var(--min-input-placeholder);
+}
+
+.min-label {
+    display: block;
+    margin-bottom: var(--min-space-xs);
+    font-size: var(--min-font-size-sm);
+    font-weight: var(--min-font-weight-medium);
+    color: var(--min-gray-700);
+}
+
+/* ========================================
+   MINIMALIST TABLES
+   ======================================== */
+
+.min-table {
+    width: 100%;
+    background: var(--min-table-bg);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.min-table th {
+    padding: var(--min-space-md);
+    font-size: var(--min-font-size-sm);
+    font-weight: var(--min-font-weight-medium);
+    color: var(--min-gray-600);
+    text-align: left;
+    border-bottom: var(--min-table-border);
+}
+
+.min-table td {
+    padding: var(--min-space-md);
+    font-size: var(--min-font-size-base);
+    color: var(--min-gray-700);
+    border-bottom: var(--min-table-border);
+}
+
+.min-table tbody tr:hover {
+    background: var(--min-table-row-hover);
+}
+
+/* ========================================
+   MINIMALIST SIDEBAR
+   ======================================== */
+
+.min-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--min-sidebar-width);
+    height: 100vh;
+    background: var(--min-sidebar-bg);
+    border-right: var(--min-sidebar-border);
+    padding: var(--min-space-lg);
+    overflow-y: auto;
+}
+
+.min-sidebar-logo {
+    margin-bottom: var(--min-space-2xl);
+    padding-bottom: var(--min-space-lg);
+    border-bottom: var(--min-border-light);
+}
+
+.min-sidebar-nav {
+    list-style: none;
+}
+
+.min-sidebar-item {
+    margin-bottom: var(--min-space-xs);
+}
+
+.min-sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: var(--min-space-sm) var(--min-space-md);
+    font-size: var(--min-font-size-sm);
+    color: var(--min-gray-600);
+    border-radius: var(--min-radius-md);
+    transition: all 0.2s ease;
+}
+
+.min-sidebar-link:hover {
+    background: var(--min-gray-50);
+    color: var(--min-gray-900);
+}
+
+.min-sidebar-link.active {
+    background: var(--min-blue-50);
+    color: var(--min-blue-600);
+    font-weight: var(--min-font-weight-medium);
+}
+
+.min-sidebar-icon {
+    margin-right: var(--min-space-md);
+    width: 20px;
+    height: 20px;
+}
+
+/* ========================================
+   MINIMALIST LAYOUT
+   ======================================== */
+
+.min-layout {
+    margin-left: var(--min-sidebar-width);
+    min-height: 100vh;
+}
+
+.min-header {
+    height: var(--min-header-height);
+    background: var(--min-header-bg);
+    border-bottom: var(--min-header-border);
+    padding: 0 var(--min-space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.min-main {
+    padding: var(--min-space-xl);
+}
+
+.min-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   MINIMALIST UTILITIES
+   ======================================== */
+
+/* Spacing */
+.min-mt-sm { margin-top: var(--min-space-sm); }
+.min-mt-md { margin-top: var(--min-space-md); }
+.min-mt-lg { margin-top: var(--min-space-lg); }
+.min-mt-xl { margin-top: var(--min-space-xl); }
+
+.min-mb-sm { margin-bottom: var(--min-space-sm); }
+.min-mb-md { margin-bottom: var(--min-space-md); }
+.min-mb-lg { margin-bottom: var(--min-space-lg); }
+.min-mb-xl { margin-bottom: var(--min-space-xl); }
+
+/* Text */
+.min-text-xs { font-size: var(--min-font-size-xs); }
+.min-text-sm { font-size: var(--min-font-size-sm); }
+.min-text-lg { font-size: var(--min-font-size-lg); }
+.min-text-xl { font-size: var(--min-font-size-xl); }
+
+.min-text-light { font-weight: var(--min-font-weight-light); }
+.min-text-medium { font-weight: var(--min-font-weight-medium); }
+.min-text-semibold { font-weight: var(--min-font-weight-semibold); }
+
+.min-text-muted { color: var(--min-gray-500); }
+.min-text-secondary { color: var(--min-gray-600); }
+.min-text-primary { color: var(--min-gray-900); }
+
+/* Display */
+.min-flex { display: flex; }
+.min-flex-col { flex-direction: column; }
+.min-items-center { align-items: center; }
+.min-justify-between { justify-content: space-between; }
+.min-justify-center { justify-content: center; }
+.min-gap-sm { gap: var(--min-space-sm); }
+.min-gap-md { gap: var(--min-space-md); }
+.min-gap-lg { gap: var(--min-space-lg); }
+
+/* Grid */
+.min-grid {
+    display: grid;
+    gap: var(--min-space-lg);
+}
+
+.min-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.min-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.min-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ========================================
+   MINIMALIST RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .min-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .min-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .min-layout {
+        margin-left: 0;
+    }
+
+    .min-grid-2,
+    .min-grid-3,
+    .min-grid-4 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,431 @@
+/**
+ * GCMS Blue-White-Navy Professional Theme
+ * โทนสีฟ้า ขาว น้ำเงิน - Professional Medical System
+ * Designed for GUYSIRI CLINIC
+ */
+
+:root {
+    /* ========================================
+       PRIMARY PALETTE - Blue/Navy/White
+       ======================================== */
+
+    /* Pure White */
+    --theme-white: #ffffff;
+    --theme-white-95: rgba(255, 255, 255, 0.95);
+    --theme-white-90: rgba(255, 255, 255, 0.9);
+    --theme-white-80: rgba(255, 255, 255, 0.8);
+
+    /* Sky Blue Palette (สีฟ้า) */
+    --theme-sky-50: #f0f9ff;   /* Lightest sky */
+    --theme-sky-100: #e0f2fe;  /* Very light sky */
+    --theme-sky-200: #bae6fd;  /* Light sky */
+    --theme-sky-300: #7dd3fc;  /* Soft sky */
+    --theme-sky-400: #38bdf8;  /* Medium sky */
+    --theme-sky-500: #0ea5e9;  /* Sky blue */
+    --theme-sky-600: #0284c7;  /* Deep sky */
+
+    /* Navy Blue Palette (สีน้ำเงิน) */
+    --theme-navy-500: #1e40af;  /* Medium navy */
+    --theme-navy-600: #1e3a8a;  /* Navy blue */
+    --theme-navy-700: #1e3a8a;  /* Deep navy */
+    --theme-navy-800: #1e2a5e;  /* Darker navy */
+    --theme-navy-900: #0f172a;  /* Darkest navy */
+
+    /* Ocean Blue (Mixed Tones) */
+    --theme-ocean-100: #dbeafe;
+    --theme-ocean-200: #bfdbfe;
+    --theme-ocean-300: #93c5fd;
+    --theme-ocean-400: #60a5fa;
+    --theme-ocean-500: #3b82f6;
+    --theme-ocean-600: #2563eb;
+
+    /* Supporting Grays */
+    --theme-gray-50: #f8fafc;
+    --theme-gray-100: #f1f5f9;
+    --theme-gray-200: #e2e8f0;
+    --theme-gray-300: #cbd5e1;
+    --theme-gray-400: #94a3b8;
+    --theme-gray-500: #64748b;
+    --theme-gray-600: #475569;
+
+    /* ========================================
+       COMPONENT COLOR ASSIGNMENTS
+       ======================================== */
+
+    /* Backgrounds */
+    --bg-primary: var(--theme-white);
+    --bg-secondary: var(--theme-sky-50);
+    --bg-accent: linear-gradient(135deg, var(--theme-sky-500) 0%, var(--theme-ocean-600) 100%);
+    --bg-dark: linear-gradient(180deg, var(--theme-navy-600) 0%, var(--theme-navy-800) 100%);
+
+    /* Headers & Navigation */
+    --header-bg: linear-gradient(135deg, var(--theme-ocean-500) 0%, var(--theme-navy-600) 100%);
+    --nav-bg: var(--theme-navy-700);
+    --nav-hover: rgba(255, 255, 255, 0.1);
+    --nav-active: rgba(255, 255, 255, 0.15);
+
+    /* Cards & Containers */
+    --card-bg: var(--theme-white);
+    --card-border: var(--theme-sky-100);
+    --card-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);
+    --card-hover-shadow: 0 4px 16px rgba(30, 58, 138, 0.12);
+
+    /* Buttons */
+    --btn-primary-bg: linear-gradient(135deg, var(--theme-sky-500) 0%, var(--theme-ocean-600) 100%);
+    --btn-primary-hover: linear-gradient(135deg, var(--theme-sky-600) 0%, var(--theme-ocean-700) 100%);
+    --btn-secondary-bg: var(--theme-white);
+    --btn-secondary-border: var(--theme-ocean-300);
+    --btn-navy-bg: var(--theme-navy-600);
+    --btn-navy-hover: var(--theme-navy-700);
+
+    /* Forms */
+    --input-bg: var(--theme-white);
+    --input-border: var(--theme-sky-200);
+    --input-focus-border: var(--theme-ocean-500);
+    --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+
+    /* Tables */
+    --table-header-bg: linear-gradient(180deg, var(--theme-sky-100) 0%, var(--theme-sky-50) 100%);
+    --table-row-hover: var(--theme-sky-50);
+    --table-border: var(--theme-sky-100);
+
+    /* Text Colors */
+    --text-primary: var(--theme-navy-900);
+    --text-secondary: var(--theme-gray-600);
+    --text-light: var(--theme-gray-500);
+    --text-on-dark: var(--theme-white);
+    --text-link: var(--theme-ocean-600);
+
+    /* Status Colors */
+    --status-success: #10b981;
+    --status-warning: #f59e0b;
+    --status-danger: #ef4444;
+    --status-info: var(--theme-sky-500);
+
+    /* ========================================
+       SPACING & SIZING
+       ======================================== */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+body {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+.header-gradient {
+    background: var(--header-bg);
+    color: var(--text-on-dark);
+}
+
+.nav-sidebar {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+}
+
+.nav-item {
+    transition: all 0.3s ease;
+    border-radius: var(--radius-md);
+    margin: 2px 0;
+}
+
+.nav-item:hover {
+    background: var(--nav-hover);
+    transform: translateX(2px);
+}
+
+.nav-item.active {
+    background: var(--nav-active);
+    border-left: 3px solid var(--theme-sky-400);
+}
+
+/* ========================================
+   CARDS & CONTAINERS
+   ======================================== */
+
+.card-blue {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.card-blue:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.card-header-blue {
+    background: linear-gradient(135deg, var(--theme-sky-100) 0%, var(--theme-ocean-100) 100%);
+    border-bottom: 2px solid var(--theme-ocean-200);
+    padding: var(--space-lg);
+}
+
+.card-header-navy {
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+    padding: var(--space-lg);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn-ocean {
+    background: var(--btn-primary-bg);
+    color: var(--text-on-dark);
+    border: none;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.btn-ocean:hover {
+    background: var(--btn-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-navy {
+    background: var(--btn-navy-bg);
+    color: var(--text-on-dark);
+    border: none;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+    background: var(--btn-navy-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline-ocean {
+    background: var(--btn-secondary-bg);
+    color: var(--theme-ocean-600);
+    border: 2px solid var(--btn-secondary-border);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-ocean:hover {
+    background: var(--theme-sky-50);
+    border-color: var(--theme-ocean-500);
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+
+.input-ocean {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.input-ocean:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+    box-shadow: var(--input-focus-shadow);
+    background: var(--theme-white);
+}
+
+.input-ocean::placeholder {
+    color: var(--theme-gray-400);
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+
+.table-ocean {
+    width: 100%;
+    background: var(--theme-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.table-ocean thead {
+    background: var(--table-header-bg);
+}
+
+.table-ocean thead th {
+    padding: var(--space-md);
+    font-weight: 600;
+    color: var(--theme-navy-700);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+    border-bottom: 2px solid var(--theme-ocean-200);
+}
+
+.table-ocean tbody td {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--table-border);
+    color: var(--text-primary);
+}
+
+.table-ocean tbody tr:hover {
+    background: var(--table-row-hover);
+}
+
+/* ========================================
+   BADGES & TAGS
+   ======================================== */
+
+.badge-ocean {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--theme-sky-100);
+    color: var(--theme-ocean-700);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge-navy {
+    background: var(--theme-navy-600);
+    color: var(--text-on-dark);
+}
+
+.badge-sky {
+    background: linear-gradient(135deg, var(--theme-sky-200) 0%, var(--theme-sky-300) 100%);
+    color: var(--theme-ocean-700);
+}
+
+/* ========================================
+   SPECIAL COMPONENTS
+   ======================================== */
+
+/* Patient Avatar */
+.avatar-ocean {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.avatar-ocean.male {
+    background: linear-gradient(135deg, var(--theme-sky-200) 0%, var(--theme-ocean-300) 100%);
+    color: var(--theme-navy-700);
+    border: 2px solid var(--theme-white);
+}
+
+.avatar-ocean.female {
+    background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 100%);
+    color: var(--theme-navy-600);
+    border: 2px solid var(--theme-white);
+}
+
+/* Info Cards */
+.info-card-ocean {
+    background: linear-gradient(135deg, var(--theme-white) 0%, var(--theme-sky-50) 100%);
+    border: 1px solid var(--theme-sky-100);
+    border-left: 4px solid var(--theme-ocean-500);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition: all 0.3s ease;
+}
+
+.info-card-ocean:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+/* Dashboard Stats */
+.stat-card-ocean {
+    background: var(--theme-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card-ocean::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--bg-accent);
+}
+
+.stat-card-ocean:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes wave-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes pulse-ocean {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.pulse-effect {
+    animation: pulse-ocean 2s infinite;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --space-md: 0.75rem;
+        --space-lg: 1rem;
+        --space-xl: 1.5rem;
+    }
+
+    .card-blue {
+        border-radius: var(--radius-md);
+    }
+}
