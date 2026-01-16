@@ -31,5 +31,5 @@ RUN chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 # Expose port
 EXPOSE 8080
 
-# Simple start command
-CMD php artisan migrate --force; php artisan serve --host=0.0.0.0 --port=$PORT
+# Start command
+CMD ["/bin/bash", "-c", "php artisan migrate --force && echo 'Starting server on port:' $PORT && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"]
