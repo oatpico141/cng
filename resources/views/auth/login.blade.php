@@ -178,69 +178,6 @@
             transform: none;
         }
 
-        .divider {
-            display: flex;
-            align-items: center;
-            margin: 24px 0;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e5e7eb;
-        }
-
-        .divider span {
-            padding: 0 12px;
-            font-size: 12px;
-            color: #9ca3af;
-        }
-
-        .demo-box {
-            background: #f0f9ff;
-            border-radius: 12px;
-            padding: 16px;
-            border: 1px solid #bae6fd;
-        }
-
-        .demo-title {
-            font-size: 13px;
-            font-weight: 500;
-            color: #0369a1;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .demo-item {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e0f2fe;
-        }
-
-        .demo-item small {
-            display: block;
-            font-size: 11px;
-            color: #64748b;
-            margin-bottom: 2px;
-        }
-
-        .demo-item strong {
-            font-size: 14px;
-            color: #0c4a6e;
-        }
-
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -331,27 +268,6 @@
                 <span>เข้าสู่ระบบ</span>
             </button>
         </form>
-
-        <div class="divider">
-            <span>ข้อมูลทดสอบ</span>
-        </div>
-
-        <div class="demo-box">
-            <div class="demo-title">
-                <i class="bi bi-info-circle"></i>
-                ข้อมูลเข้าสู่ระบบ
-            </div>
-            <div class="demo-grid">
-                <div class="demo-item">
-                    <small>ชื่อผู้ใช้</small>
-                    <strong>admin</strong>
-                </div>
-                <div class="demo-item">
-                    <small>รหัสผ่าน</small>
-                    <strong>password</strong>
-                </div>
-            </div>
-        </div>
 
         <div class="footer">
             © 2025 CNG Clinic
